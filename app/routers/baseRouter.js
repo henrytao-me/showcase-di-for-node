@@ -1,11 +1,16 @@
 export default class BaseRouter {
 
-  @Inject logger
-
   @Inject errorService
+
+  @Inject logger
 
   constructor(component) {
     component.inject(this)
+    this.initialize()
+  }
+
+  initialize() {
+    // do something
   }
 
   onError(res, error) {

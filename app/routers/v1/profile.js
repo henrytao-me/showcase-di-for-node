@@ -8,8 +8,7 @@ export default class ProfileRouter extends BaseRouter {
 
   @Inject router
 
-  constructor(component) {
-    super(component)
+  initialize() {
     this.router.use(this.authMiddleware.run())
     this.router.get('/profile', this.route(this.getProfile))
   }
