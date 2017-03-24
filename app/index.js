@@ -5,7 +5,7 @@ import Router from './routers'
 const appComponent = new Dagger.Builder(AppComponent).build()
 
 // Load router
-// Router.load(appComponent)
+Router.load(appComponent)
 
 // Start server
 export default new Promise((resolve, reject) => {

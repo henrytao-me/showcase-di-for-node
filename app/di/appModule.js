@@ -10,7 +10,10 @@ export default class AppModule {
   provideEnv(utilService) {
     const defaultEnv = require('../../env/default.json')
     const env = require(`../../env/${process.env.NODE_ENV || 'dev'}.json`)
-    return utilService.merge({}, defaultEnv, env)
+    return utilService.merge({}, defaultEnv, env, {
+      isDev: !process.env.NODE_ENV || process.env.NODE_ENV === 'dev',
+      isTest: process.env.NODE_ENV === 'test'
+    })
   }
 
   @Singleton
