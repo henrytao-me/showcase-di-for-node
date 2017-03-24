@@ -8,11 +8,9 @@ export default class AuthRouter extends BaseRouter {
 
   @Inject urlencodedParser
 
-  @Inject jsonParser
-
   constructor(component) {
     super(component)
-    this.router.post('/auth', [this.urlencodedParser, this.jsonParser], this.route(this.auth))
+    this.router.post('/auth', [this.urlencodedParser], this.route(this.auth))
   }
 
   async auth(req, res) {
