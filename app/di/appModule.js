@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser'
+import bunyanPretty from 'bunyan-pretty'
 import bunyan from 'bunyan'
 import express from 'express'
 
@@ -30,10 +31,11 @@ export default class AppModule {
 
   @Singleton
   @Provides('logger')
-  provideLogger(configService) {
+  provideLogger(configService, env) {
     // fatal, error, warn, info, debug, trace
     return bunyan.createLogger({
       name: configService.getAppName(),
+      stream: env.isDev && process.stdout.isTTY ? bunyanPretty() : process.stdout,
       level: configService.getLogLevel()
     })
   }

@@ -8,7 +8,7 @@ export default class ServiceModule {
 
   @Singleton
   @Provides('authService')
-  provideAuthService() {
+  provideAuthService(errorService) {
     return new AuthService(...arguments)
   }
 

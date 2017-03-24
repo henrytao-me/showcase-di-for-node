@@ -16,11 +16,6 @@ export default class AuthMiddleware extends BaseMiddleware {
       const token = authorization.trim().replace(/(\w+)\s(.+)/, (all, $bearer, $token) => $token)
       this.authService
         .verifyToken(token)
-        .then(result => {
-          if (!result) {
-            throw this.errorService.unauthorized()
-          }
-        })
         .then(o => {
           req.authorization = Object.assign({}, req.authorization, {
             token: token

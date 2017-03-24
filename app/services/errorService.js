@@ -18,6 +18,18 @@ class BaseError extends Error {
   }
 }
 
+class InvalidPassword extends BaseError {
+  constructor() {
+    super(500, 'invalid_password', 'Invalid password')
+  }
+}
+
+class SomethingWentWrong extends BaseError {
+  constructor() {
+    super(500, 'something_went_wrong', 'Sorry! Something went wrong.')
+  }
+}
+
 class Unauthorized extends BaseError {
   constructor() {
     super(401, 'unauthorized', 'Unauthorized')
@@ -25,6 +37,14 @@ class Unauthorized extends BaseError {
 }
 
 export default class ErrorService {
+
+  invalidPassword() {
+    return new InvalidPassword()
+  }
+
+  somethingWentWrong() {
+    return new SomethingWentWrong()
+  }
 
   unauthorized() {
     return new Unauthorized()

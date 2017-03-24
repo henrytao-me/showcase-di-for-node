@@ -16,7 +16,7 @@ export default class AuthRouter extends BaseRouter {
   }
 
   async auth(req, res) {
-    const { username, password } = require.body
+    const { username, password } = req.body || {}
     this.onSuccess(res, {
       token: await this.authUseCase.auth(username, password)
     })
