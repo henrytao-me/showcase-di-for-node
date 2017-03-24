@@ -18,18 +18,6 @@ Run node server
 $ gulp server
 ```
 
-Run unit tests
-
-```
-$ gulp test:unit
-```
-
-Run integration tests
-
-```
-$ gulp test:intergration
-```
-
 Run all tests
 
 ```

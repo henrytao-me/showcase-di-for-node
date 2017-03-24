@@ -15,23 +15,12 @@ gulp.task('server', () => {
 })
 
 gulp.task('test', done => {
-  runSequence('test:unit', 'test:integration', done)
+  runSequence('test:unit', done)
 })
 
 gulp.task('test:unit', () => {
   process.env.NODE_ENV = process.env.NODE_ENV || 'test'
   gulp.src(['./test/unit/initialize.js', process.env.SPECS || './test/unit/**/*.spec.js'], {
-    read: false
-  })
-    .pipe(mocha({
-      harmony: true,
-      reporter: 'spec'
-    }))
-})
-
-gulp.task('test:integration', () => {
-  process.env.NODE_ENV = process.env.NODE_ENV || 'test'
-  gulp.src(['./test/integration/onInitialize.js', process.env.SPECS || './test/integration/**/*.spec.js'], {
     read: false
   })
     .pipe(mocha({
