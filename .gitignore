@@ -1,0 +1,13 @@
+.annotation
+
+.DS_Store
+.project
+.idea
+nbproject
+.settings
+node_modules
+coverage
+log/*
+.annotation
+db/modeler/*
+npm-debug.log

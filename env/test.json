@@ -1,0 +1,9 @@
+{
+  "log": {
+    "level": "fatal"
+  },
+  "name": "showcase-di-for-node-test",
+  "server": {
+    "port": 3001
+  }
+}

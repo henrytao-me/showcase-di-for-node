@@ -1,0 +1,27 @@
+{
+  "name": "showcase-di-for-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrytao-me/showcase-di-for-node.git"
+  },
+  "author": "Henry Tao <hi@henrytao.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/henrytao-me/showcase-di-for-node/issues"
+  },
+  "homepage": "https://github.com/henrytao-me/showcase-di-for-node#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bunyan": "^1.8.9",
+    "dagger-compiler": "^1.0.2",
+    "express": "^4.15.2",
+    "import-export": "^1.0.1"
+  }
+}

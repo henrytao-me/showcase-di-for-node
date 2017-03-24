@@ -1,0 +1,9 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "name": "showcase-di-for-node",
+  "server": {
+    "port": 3000
+  }
+}
