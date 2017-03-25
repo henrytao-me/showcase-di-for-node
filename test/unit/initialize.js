@@ -7,20 +7,22 @@ global.sinon = require('sinon')
 
 global.ARGS = {
   interface: {
-    
+
   }
 }
 
 class Mock {
 
-  constructor(keys, provider) {
+  constructor(keys = [], provider = () => {}) {
     this.mocks = []
-    this.params = keys.map(key => {
-      let value = provider(key)
-      this[key] = sinon.mock(value)
-      this.mocks.push(this[key])
-      return value
-    })
+    this.params = []
+    keys.forEach(key => this.add(key, provider(key)))
+  }
+
+  add(key, value) {
+    this.params.push(value)
+    this[key] = sinon.mock(value)
+    this.mocks.push(this[key])
   }
 
   restore() {

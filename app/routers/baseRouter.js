@@ -4,9 +4,11 @@ export default class BaseRouter {
 
   @Inject logger
 
-  constructor(component) {
+  constructor(component, { testMode = false }) {
     component.inject(this)
-    this.initialize()
+    if (!testMode) {
+      this.initialize()
+    }
   }
 
   initialize() {
