@@ -10,6 +10,11 @@ $ npm install
 ```
 
 
+## Environment
+
+Tested on node `v7.5.0`
+
+
 ## Run
 
 Run node server
